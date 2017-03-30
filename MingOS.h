@@ -25,8 +25,10 @@
 #define OTHERS_R	4						//其它用户读权限
 #define OTHERS_W	2						//其它用户写权限
 #define OTHERS_X	1						//其它用户执行权限
+
+// 注 umask 默认为002，因此文件默认权限 664，目录默认权限775
 #define FILE_DEF_PERMISSION 0664			//文件默认权限
-#define DIR_DEF_PERMISSION	0755			//目录默认权限
+#define DIR_DEF_PERMISSION	0775			//目录默认权限 
 
 #define FILESYSNAME	"MingOS.sys"			//虚拟磁盘文件名
 
