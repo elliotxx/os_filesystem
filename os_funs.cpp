@@ -761,6 +761,7 @@ bool create(int parinoAddr,char name[],char buf[])	//´´½¨ÎÄ¼þº¯Êý£¬ÔÚ¸ÃÄ¿Â¼ÏÂ´´½
 				//ÕÒµ½Ò»¸ö¿ÕÏÐ¼ÇÂ¼£¬½«ÐÂÎÄ¼þ´´½¨µ½Õâ¸öÎ»ÖÃ 
 				posi = dno;
 				posj = j;
+				break;
 			}
 			else if(strcmp(dirlist[j].itemName,name)==0 ){
 				//ÖØÃû£¬È¡³öinode£¬ÅÐ¶ÏÊÇ·ñÊÇÎÄ¼þ
@@ -816,7 +817,7 @@ bool create(int parinoAddr,char name[],char buf[])	//´´½¨ÎÄ¼þº¯Êý£¬ÔÚ¸ÃÄ¿Â¼ÏÂ´´½
 					p.i_dirBlock[k/superblock->s_BLOCK_SIZE] = curblockAddr;
 					//Ð´Èëµ½µ±Ç°Ä¿Â¼µÄ´ÅÅÌ¿é
 					fseek(fw,curblockAddr,SEEK_SET);	
-					fwrite(buf+k,superblock->s_BLOCK_SIZE,1,fw);
+					fwrite(buf+k*superblock->s_BLOCK_SIZE,superblock->s_BLOCK_SIZE,1,fw);
 				}
 				
 
