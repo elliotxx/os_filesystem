@@ -761,6 +761,7 @@ bool create(int parinoAddr,char name[],char buf[])	//´´½¨ÎÄ¼şº¯Êı£¬ÔÚ¸ÃÄ¿Â¼ÏÂ´´½
 				//ÕÒµ½Ò»¸ö¿ÕÏĞ¼ÇÂ¼£¬½«ĞÂÎÄ¼ş´´½¨µ½Õâ¸öÎ»ÖÃ 
 				posi = dno;
 				posj = j;
+				break;
 			}
 			else if(strcmp(dirlist[j].itemName,name)==0 ){
 				//ÖØÃû£¬È¡³öinode£¬ÅĞ¶ÏÊÇ·ñÊÇÎÄ¼ş
