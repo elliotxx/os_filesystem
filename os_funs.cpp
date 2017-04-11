@@ -1626,7 +1626,7 @@ void writefile(Inode fileInode,int fileInodeAddr,char buf[])	//将buf内容写回文件
 		}
 		//写入到当前目录的磁盘块
 		fseek(fw,curblockAddr,SEEK_SET);	
-		fwrite(buf+k,superblock->s_BLOCK_SIZE,1,fw);
+		fwrite(buf+k*superblock->s_BLOCK_SIZE,superblock->s_BLOCK_SIZE,1,fw);
 		fflush(fw);
 	}
 	//更新该文件大小
