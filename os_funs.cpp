@@ -761,6 +761,7 @@ bool create(int parinoAddr,char name[],char buf[])	//╢╢╫╗нд╪Ч╨╞йЩё╛тз╦цд©б╪об╢╢╫
 				//ур╣╫р╩╦Ж©уоп╪гб╪ё╛╫╚пбнд╪Ч╢╢╫╗╣╫уБ╦Жн╩жц 
 				posi = dno;
 				posj = j;
+				break;
 			}
 			else if(strcmp(dirlist[j].itemName,name)==0 ){
 				//жьцШё╛х║ЁЖinodeё╛еп╤ойг╥Яйгнд╪Ч
@@ -816,7 +817,7 @@ bool create(int parinoAddr,char name[],char buf[])	//╢╢╫╗нд╪Ч╨╞йЩё╛тз╦цд©б╪об╢╢╫
 					p.i_dirBlock[k/superblock->s_BLOCK_SIZE] = curblockAddr;
 					//п╢хК╣╫╣╠г╟д©б╪╣д╢еел©И
 					fseek(fw,curblockAddr,SEEK_SET);	
-					fwrite(buf+k,superblock->s_BLOCK_SIZE,1,fw);
+					fwrite(buf+k*superblock->s_BLOCK_SIZE,superblock->s_BLOCK_SIZE,1,fw);
 				}
 				
 
@@ -1625,7 +1626,7 @@ void writefile(Inode fileInode,int fileInodeAddr,char buf[])	//╫╚bufдзхщп╢╩ьнд╪Ч
 		}
 		//п╢хК╣╫╣╠г╟д©б╪╣д╢еел©И
 		fseek(fw,curblockAddr,SEEK_SET);	
-		fwrite(buf+k,superblock->s_BLOCK_SIZE,1,fw);
+		fwrite(buf+k*superblock->s_BLOCK_SIZE,superblock->s_BLOCK_SIZE,1,fw);
 		fflush(fw);
 	}
 	//╦Эпб╦цнд╪Ч╢Сп║
